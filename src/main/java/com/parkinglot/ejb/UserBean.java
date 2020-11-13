@@ -31,13 +31,13 @@ public class UserBean {
     private EntityManager em;
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
-    public List<UserDetails> getAllCars() {
+    public List<UserDetails> getAllUsers() {
         LOG.info("getAllUsers");
         try {
             Query query = em.createQuery("SELECT u FROM User u");
-            List<Car> cars = (List<Car>) query.getResultList();
+            List<User> users = (List<User>) query.getResultList();
             //List<Car> cars = (List<Car>) em.createQuery("SELECT c FROM Car c").getResultList();
-            return copyUsersToDetails(cars);
+            return copyUsersToDetails(users);
         } catch (Exception ex) {
             throw new EJBException(ex);
         }
