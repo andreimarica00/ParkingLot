@@ -1,17 +1,15 @@
-<%-- 
-    Document   : pageTemplate
-    Created on : Nov 8, 2020, 8:57:33 PM
-    Author     : Andrei Marica
---%>
-
 <%@tag description="put the tag description here" pageEncoding="UTF-8"%>
-
-<%-- The list of normal or fragment attributes can be specified here: --%>
 <%@attribute name="pageTitle"%>
 
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            .celMaiScrisLaMijloc{
+                margin: auto;
+                width: 50%;   
+            }
+        </style>
         <title>${pageTitle}</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
@@ -19,7 +17,7 @@
     </head>
     <body>
         <jsp:include page="/WEB-INF/pages/menu.jsp" />
-        <main role="main" class="container">
+        <main role="main" class="container-fluid">
             <jsp:doBody />
         </main>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

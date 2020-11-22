@@ -13,10 +13,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Andrei Marica
- */
 @WebServlet(name = "AddCar", urlPatterns = {"/AddCar"})
 public class AddCar extends HttpServlet {
     
