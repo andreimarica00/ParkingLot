@@ -1,4 +1,4 @@
-package com.park.parkinglot.servlet;
+package com.park.parkinglot.servlet.car;
 
 import com.park.parkinglot.common.CarDetails;
 import com.parkinglot.ejb.CarBean;
@@ -18,28 +18,11 @@ import javax.servlet.http.HttpServletResponse;
 
 @DeclareRoles({"AdminRole","ClientRole"})
 @ServletSecurity(value = @HttpConstraint(rolesAllowed = {"AdminRole"}))
-
 @WebServlet(name = "Cars", urlPatterns = {"/Cars"})
 public class Cars extends HttpServlet {
 
     @Inject
     private CarBean carBean;
-
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Cars</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Cars at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -50,7 +33,7 @@ public class Cars extends HttpServlet {
         List<CarDetails> cars = carBean.getAllCars();
 
         request.setAttribute("cars", cars);
-        request.getRequestDispatcher("/WEB-INF/pages/cars.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/car/cars.jsp").forward(request, response);
     }
 
     @Override
@@ -69,7 +52,7 @@ public class Cars extends HttpServlet {
 
     @Override
     public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+        return "Cars v1.0";
+    }
 
 }

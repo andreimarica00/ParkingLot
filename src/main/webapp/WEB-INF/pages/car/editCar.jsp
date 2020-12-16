@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="col-md-16 order-md-1">
             <h1 class="mb-3">Edit Car</h1>
-            <form class="needs-validation" novalidate method="POST" action="${pageContext.request.contextPath}/EditCar">
+            <form class="needs-validation" novalidate method="POST" action="${pageContext.request.contextPath}/Cars/Update">
 
                 <div class="col-md-6 mb-3">
                     <label for="firstName">License Plate</label>
